@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.Game Engines Final.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../../:\Users\adamk\OneDrive\Documents\GitHub\GE-Final-Asessment\Game Engines Final\.idea\.idea.Game Engines Final\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
