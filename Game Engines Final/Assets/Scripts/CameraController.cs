@@ -32,10 +32,13 @@ public class CameraController : MonoBehaviour
         {
             flydir = -1;
         }
-        
-        
-        cameraShift.x += Input.GetAxis("Mouse X");
-        cameraShift.y += Input.GetAxis("Mouse Y"); //Apply mouse movements to variables. Could probably compress this into one line but... meh.
+
+        if (!Input.GetKey(KeyCode.LeftControl))
+        {
+            cameraShift.x += Input.GetAxis("Mouse X");
+            cameraShift.y += Input.GetAxis("Mouse Y"); //Apply mouse movements to variables. Could probably compress this into one line but... meh.
+        }
+
         
         cameraLook = Quaternion.Euler(cameraShift.y * -lookSensitivity, cameraShift.x * lookSensitivity, 0); //Apply said variables to the camera rotation variable.
         

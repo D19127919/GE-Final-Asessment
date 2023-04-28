@@ -34,9 +34,12 @@ public class PredatorAI : MonoBehaviour
         if (myTarget == null) //If the target doesn't exist...
         {
             myTarget = FindTarget(sightDistance, true); //Get a new one.
-            
-            myChase.target = myTarget.GetComponent<Boid>();
-            myArrive.target = myTarget; //Set the targets.
+
+            if (myTarget != null) //If you now have a target...
+            {
+                myChase.target = myTarget.GetComponent<Boid>();
+                myArrive.target = myTarget; //Set the targets.
+            }
         }
     }
 
@@ -44,6 +47,10 @@ public class PredatorAI : MonoBehaviour
     {
         List<GameObject> potentialPrey = new List<GameObject>();
         GameObject[] allPrey = GameObject.FindGameObjectsWithTag(preyTag);
+        if (allPrey.Length == 0)
+        {
+            return null;
+        }
 
         foreach (GameObject prey in allPrey) //For each prey in the scene...
         {
@@ -76,5 +83,13 @@ public class PredatorAI : MonoBehaviour
         }
 
         return potentialPrey[closest];
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(preyTag))
+        {
+            other.SendMessage("Caught");
+        }
     }
 }

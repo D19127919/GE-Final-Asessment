@@ -12,16 +12,22 @@ public class Chase : BoidBehaviour
     // Start is called before the first frame update
     public override Vector3 Calculate() //This behaviour...
     {
-        targetPos = target.transform.position;
-        if (isSmart)
+        if (target != null)
         {
-            float targetDist = Vector3.Distance(target.transform.position, gameObject.transform.position);
-            float timeToReach = targetDist / myBoid.maxSpeed;
+            targetPos = target.transform.position;
+            if (isSmart)
+            {
+                float targetDist = Vector3.Distance(target.transform.position, gameObject.transform.position);
+                float timeToReach = targetDist / myBoid.maxSpeed;
 
-            targetPos += (target.velocity * timeToReach);
-        }
+                targetPos += (target.velocity * timeToReach);
+            }
         
-        return myBoid.ChaseForce(targetPos);
+            return myBoid.ChaseForce(targetPos);
+        }
+
+        return Vector3.zero;
+
     }
 
     // Update is called once per frame

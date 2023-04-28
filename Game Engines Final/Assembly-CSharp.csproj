@@ -52,13 +52,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\BoidBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Boid.cs" />
-     <Compile Include="Assets\Scripts\Arrive.cs" />
      <Compile Include="Assets\Scripts\Flee.cs" />
-     <Compile Include="Assets\Scripts\Chase.cs" />
      <Compile Include="Assets\Scripts\PredatorAI.cs" />
+     <Compile Include="Assets\Scripts\Boid.cs" />
+     <Compile Include="Assets\Scripts\BoidBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Arrive.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Chase.cs" />
+     <Compile Include="Assets\Scripts\PreyAI.cs" />
+     <Compile Include="Assets\Scripts\Wander.cs" />
+     <Compile Include="Assets\Scripts\Avoid.cs" />
+     <Compile Include="Assets\Scripts\CopiedAvoid.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
