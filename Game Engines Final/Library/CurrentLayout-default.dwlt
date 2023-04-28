@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 85
+  controlID: 111
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 86
+  controlID: 112
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 87
+  controlID: 113
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -343,13 +343,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\adamk\OneDrive\Documents\GitHub\GE-Final-Asessment\Game
     Engines Final
@@ -357,9 +357,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a3d0000
-    m_LastClickedID: 15626
-    m_ExpandedIDs: 00000000003d0000
+    m_SelectedIDs: 123d0000
+    m_LastClickedID: 15634
+    m_ExpandedIDs: 000000000c3d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -387,7 +387,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000003d0000
+    m_ExpandedIDs: 000000000c3d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -475,7 +475,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 766
+  m_LastVerticalScrollValue: 85
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
@@ -508,8 +508,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a63c0000
-      m_LastClickedID: 15526
+      m_SelectedIDs: 743c0000
+      m_LastClickedID: 15476
       m_ExpandedIDs: 52fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -570,9 +570,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.6616926, y: -7.3633037, z: 3.3161988}
+    m_Target: {x: 7.053533, y: 1.844477, z: -1.5570859}
     speed: 2
-    m_Value: {x: 4.6616926, y: -7.3633037, z: 3.3161988}
+    m_Value: {x: 7.053533, y: 1.844477, z: -1.5570859}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -619,13 +619,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.4498713, y: -0.13806814, z: 0.07064249, w: -0.87950957}
+    m_Target: {x: -0.24180447, y: 0.69420207, z: -0.26988843, w: -0.621891}
     speed: 2
-    m_Value: {x: -0.44987705, y: -0.1380699, z: 0.070643395, w: -0.8795208}
+    m_Value: {x: -0.2418076, y: 0.69421107, z: -0.26989192, w: -0.62189907}
   m_Size:
-    m_Target: 11.801184
+    m_Target: 21.588314
     speed: 2
-    m_Value: 11.801184
+    m_Value: 21.588314
   m_Ortho:
     m_Target: 0
     speed: 2

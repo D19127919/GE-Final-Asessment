@@ -24,7 +24,7 @@ public class PredatorAI : MonoBehaviour
         
         myTarget = FindTarget(sightDistance, false); //Find a target without using LOS rules.
         
-        myChase.target = myTarget.GetComponent<Boid>();
+        myChase.target = myTarget;
         myArrive.target = myTarget; //Set the starting targets.
     }
 
@@ -37,7 +37,7 @@ public class PredatorAI : MonoBehaviour
 
             if (myTarget != null) //If you now have a target...
             {
-                myChase.target = myTarget.GetComponent<Boid>();
+                myChase.target = myTarget;
                 myArrive.target = myTarget; //Set the targets.
             }
         }
@@ -85,7 +85,7 @@ public class PredatorAI : MonoBehaviour
         return potentialPrey[closest];
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag(preyTag))
         {

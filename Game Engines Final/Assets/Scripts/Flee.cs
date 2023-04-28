@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Flee : BoidBehaviour
 {
     public GameObject chaser = null;
     public Vector3 chaserPos = Vector3.zero;
+    public string fleeTag = "Predator";
     
     // Start is called before the first frame update
     public override Vector3 Calculate() //This behaviour...
@@ -19,6 +21,14 @@ public class Flee : BoidBehaviour
         if (chaser != null) //If something is chasing you...
         {
             chaserPos = chaser.transform.position; //Find where they are.
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(fleeTag))
+        {
+            chaser = other.gameObject;
         }
     }
 }

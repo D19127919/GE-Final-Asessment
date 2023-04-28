@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,14 +7,26 @@ public class CameraController : MonoBehaviour
 {
     public float moveSpeed = 10; //How fast the object moves.
     public float lookSensitivity = 2; //How fast the object looks.
+    public string groundTag = "Ground";
 
     private Vector2 cameraShift; //This basically stores where the mouse is on screen.
 
     private Quaternion cameraLook; //This is the actual angle needed for rotating the camera.
 
+    [Header("Keybinds")]
     public KeyCode upKey = KeyCode.Space; //What key the player presses to fly up
-
     public KeyCode downKey = KeyCode.LeftShift; //...and down.
+    public KeyCode freezeKey = KeyCode.LeftControl; //The button to freeze the camera look
+    public KeyCode spawnKey = KeyCode.P;
+    public KeyCode deleteKey = KeyCode.L;
+    private int selection = 1;
+
+    [Header("Spawning")] 
+    public GameObject foodObject;
+    public GameObject preyObject;
+    public GameObject predatorObject;
+    public GameObject obstacle;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +46,7 @@ public class CameraController : MonoBehaviour
             flydir = -1;
         }
 
-        if (!Input.GetKey(KeyCode.LeftControl))
+        if (!Input.GetKey(freezeKey))
         {
             cameraShift.x += Input.GetAxis("Mouse X");
             cameraShift.y += Input.GetAxis("Mouse Y"); //Apply mouse movements to variables. Could probably compress this into one line but... meh.
@@ -44,5 +57,52 @@ public class CameraController : MonoBehaviour
         
         transform.Translate(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, flydir * moveSpeed * Time.deltaTime, Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime); //Move the camera based on keyboard inputs.
         transform.rotation = cameraLook; //Rotate the camera in the proper direction.
+
+
+        if (Input.GetKeyDown(spawnKey))
+        {
+            RaycastHit hit;
+            Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity);
+            
+            switch (selection)
+            {
+                case 1: Instantiate(foodObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
+                case 2: Instantiate(preyObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
+                case 3: Instantiate(predatorObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
+                case 4: Instantiate(obstacle, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
+                default: break;
+            }
+        }
+
+        if (Input.GetKeyDown(deleteKey))
+        {
+            RaycastHit hit;
+            Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity);
+
+            if (!hit.collider.CompareTag(groundTag))
+            {
+                Destroy(hit.collider.gameObject);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            selection = 1;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            selection = 2;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            selection = 3;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            selection = 4;
+        }
     }   
 }

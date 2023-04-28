@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chase : BoidBehaviour
 {
-    public Boid target;
+    public GameObject target;
 
     public Vector3 targetPos;
     public bool isSmart = true;
@@ -20,7 +20,7 @@ public class Chase : BoidBehaviour
                 float targetDist = Vector3.Distance(target.transform.position, gameObject.transform.position);
                 float timeToReach = targetDist / myBoid.maxSpeed;
 
-                targetPos += (target.velocity * timeToReach);
+                targetPos += (target.GetComponent<Boid>().velocity * timeToReach);
             }
         
             return myBoid.ChaseForce(targetPos);

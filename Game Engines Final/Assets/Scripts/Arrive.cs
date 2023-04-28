@@ -6,7 +6,7 @@ public class Arrive : BoidBehaviour
 {
     public Vector3 targetPos = Vector3.zero; //The position of the target
     public float slowThreshold = 10;
-    public float deceleration = 3;
+    public float deceleration = 2;
 
     public GameObject target = null;
 
