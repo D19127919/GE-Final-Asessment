@@ -38,7 +38,7 @@ public class Boid : MonoBehaviour
 
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed); //Make sure you aren't moving faster than the fastest you are allowed to move.
 
-        if (velocity.magnitude > 0)
+        if (velocity.magnitude > 0.1f)
         {
             transform.LookAt(transform.position + velocity);
 

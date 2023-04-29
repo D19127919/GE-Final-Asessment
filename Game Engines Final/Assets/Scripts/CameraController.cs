@@ -17,8 +17,8 @@ public class CameraController : MonoBehaviour
     public KeyCode upKey = KeyCode.Space; //What key the player presses to fly up
     public KeyCode downKey = KeyCode.LeftShift; //...and down.
     public KeyCode freezeKey = KeyCode.LeftControl; //The button to freeze the camera look
-    public KeyCode spawnKey = KeyCode.P;
-    public KeyCode deleteKey = KeyCode.L;
+    public KeyCode spawnKey = KeyCode.P; //The button to spawn stuff.
+    public KeyCode deleteKey = KeyCode.L; //The button to delete stuff.
     private int selection = 1;
 
     [Header("Spawning")] 
@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
     public GameObject preyObject;
     public GameObject predatorObject;
     public GameObject tree;
-    public GameObject rock;
+    public GameObject rock; //These are what will be instantiated by the create key.
     
     // Start is called before the first frame update
     void Start()
@@ -40,11 +40,11 @@ public class CameraController : MonoBehaviour
         int flydir = 0;
         if (Input.GetKey(upKey))
         {
-            flydir = 1;
+            flydir = 1; //Move up
         }
         else if (Input.GetKey(downKey))
         {
-            flydir = -1;
+            flydir = -1; //Move down
         }
 
         if (!Input.GetKey(freezeKey))
@@ -62,8 +62,8 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKeyDown(spawnKey))
         {
-            RaycastHit hit;
-            Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity);
+            RaycastHit hit; //Store what got hit by the raycast.
+            Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity); //Cast a ray.
             
             switch (selection)
             {
@@ -72,21 +72,22 @@ public class CameraController : MonoBehaviour
                 case 3: Instantiate(predatorObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
                 case 4: Instantiate(tree, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
                 case 5: Instantiate(rock, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
-                default: break;
+                default: break; //Instantiate a prefab based on the selection variable.
             }
         }
 
-        if (Input.GetKeyDown(deleteKey))
+        if (Input.GetKeyDown(deleteKey)) //If you're pressing delete...
         {
-            RaycastHit hit;
-            Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity);
+            RaycastHit hit; //Variable storing what got hit by the raycast.
+            Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity); //Cast a ray.
 
-            if (!hit.collider.CompareTag(groundTag))
+            if (!hit.collider.CompareTag(groundTag)) //If what it hit was not tagged as a ground object...
             {
-                Destroy(hit.collider.gameObject);
+                Destroy(hit.collider.gameObject); //Destroy it.
             }
         }
 
+        
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selection = 1;
@@ -110,6 +111,6 @@ public class CameraController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             selection = 5;
-        }
+        } //All of these get input and change the selection variable based on the number pushed. Could probably have found a better way to do this, but it works this way so changing it is a low priority.
     }   
 }

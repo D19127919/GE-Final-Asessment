@@ -8,6 +8,7 @@ TagManager:
   - Food
   - Predator
   - Ground
+  - Sun
   layers:
   - Default
   - TransparentFX

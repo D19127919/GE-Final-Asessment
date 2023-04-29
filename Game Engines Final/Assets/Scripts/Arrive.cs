@@ -5,8 +5,8 @@ using UnityEngine;
 public class Arrive : BoidBehaviour
 {
     public Vector3 targetPos = Vector3.zero; //The position of the target
-    public float slowThreshold = 10;
-    public float deceleration = 2;
+    public float slowThreshold = 10; //The distance at which you start to slow
+    public float deceleration = 2; //How rapid the slowing is
 
     public GameObject target = null;
 

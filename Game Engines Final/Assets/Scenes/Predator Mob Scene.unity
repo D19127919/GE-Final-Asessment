@@ -731,9 +731,10 @@ GameObject:
   m_Component:
   - component: {fileID: 516031765}
   - component: {fileID: 516031764}
+  - component: {fileID: 516031766}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Sun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -812,8 +813,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &516031766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516031763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bdd683635461c4b8d17fe80f421f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cycleLength: 120
+  currentTime: 0
+  isDay: 1
 --- !u!1001 &599612397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1077,7 +1093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6054325786034959763, guid: 0e68a1c4c0f12f343bfddedac373a8bc, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6054325786034959763, guid: 0e68a1c4c0f12f343bfddedac373a8bc, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1320,7 +1336,7 @@ Transform:
   - {fileID: 1067638700}
   - {fileID: 1202813046}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1202813045
 PrefabInstance:

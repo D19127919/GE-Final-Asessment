@@ -220,7 +220,7 @@ MonoBehaviour:
   myBoid: {fileID: 0}
   destinationDistance: 10
   randomizeRadius: 10
-  destinationShift: 100
+  destinationShift: 10
   destination: {x: 0, y: 0, z: 0}
   worldDestination: {x: 0, y: 0, z: 0}
 --- !u!114 &6127930758143796580
