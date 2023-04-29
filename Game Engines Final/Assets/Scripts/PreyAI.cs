@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PreyAI : MonoBehaviour
 {
@@ -38,6 +39,12 @@ public class PreyAI : MonoBehaviour
 
         if (myTarget == null)
         {
+            GameObject[] potentialTargets = GameObject.FindGameObjectsWithTag(foodTag);
+            myTarget = potentialTargets[Random.Range(0, potentialTargets.Length +1)];
+            
+            
+            
+            
             myTarget = GameObject.FindWithTag(foodTag);
         }
 

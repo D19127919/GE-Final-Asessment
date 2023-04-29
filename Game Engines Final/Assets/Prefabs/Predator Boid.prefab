@@ -137,9 +137,9 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   mass: 1
   friction: 0.1
-  turnRate: 0.1
-  maxSpeed: 5
-  maxForce: 10
+  turnRate: 0.02
+  maxSpeed: 12
+  maxForce: 4
 --- !u!114 &6127930758143796576
 MonoBehaviour:
   m_ObjectHideFlags: 0
