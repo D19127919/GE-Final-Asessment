@@ -164,7 +164,7 @@ MonoBehaviour:
   forceType: 0
   mask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 51
 --- !u!114 &6127930758143796582
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,7 +25,8 @@ public class CameraController : MonoBehaviour
     public GameObject foodObject;
     public GameObject preyObject;
     public GameObject predatorObject;
-    public GameObject obstacle;
+    public GameObject tree;
+    public GameObject rock;
     
     // Start is called before the first frame update
     void Start()
@@ -69,7 +70,8 @@ public class CameraController : MonoBehaviour
                 case 1: Instantiate(foodObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
                 case 2: Instantiate(preyObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
                 case 3: Instantiate(predatorObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
-                case 4: Instantiate(obstacle, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
+                case 4: Instantiate(tree, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
+                case 5: Instantiate(rock, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
                 default: break;
             }
         }
@@ -103,6 +105,11 @@ public class CameraController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             selection = 4;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            selection = 5;
         }
     }   
 }

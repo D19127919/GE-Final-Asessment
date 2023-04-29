@@ -4,6 +4,26 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+
+/*
+I need to disclaim this, because it's not easy to understand just by looking...
+
+Yes. This looks familiar. Yes, this is your code from the example repository.
+
+I've been transcribing that code in some places to help create my behaviours, but I was always transcribing and changing variable names and adding comments. Not to escape claims of plagiarism, but rather to prove I
+understood how the code works - because that's what's really important in my eyes; not knowing how to code from scratch with no resources, but understanding what the stuff you're copying does.
+
+And then we got to this script. Unlike all the others I couldn't make heads or tails out of it. I still don't understand half the functions or even half the terms used here and my attempts to create my own
+failed miserably, so I copy-pasted this directly and synced all the variable names just so I could have a functional avoid behaviour. This is in direct contrast to my state-machine scripts which I was able to make
+work albeit messily.
+
+So when I'm all done with the rest of this project - provided I both have time and don't forget - I'll revisit this and see if I can either figure out what the heck is going on here or make my own, but given my schedule
+and how much trouble I had the last time I tried this I doubt either of those will happen.
+
+I'd rather have a complete project with one plagiarized behaviour than 50% of a project with an original, functional one.
+*/
+
+
 public class CopiedAvoid : BoidBehaviour
 {
     public float scale = 4.0f;

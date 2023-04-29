@@ -137,8 +137,8 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   mass: 1
   friction: 0.1
-  turnRate: 0.1
-  maxSpeed: 2
+  turnRate: 0.2
+  maxSpeed: 5
   maxForce: 10
 --- !u!114 &936109543053008701
 MonoBehaviour:
@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  decayTime: 10
   foodTag: Food
   eatDistance: 2
 --- !u!114 &936109543053008698

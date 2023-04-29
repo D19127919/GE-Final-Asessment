@@ -6,6 +6,7 @@ using UnityEngine;
 public class PreyAI : MonoBehaviour
 {
     public float health = 5;
+    public float decayTime = 10;
     public string foodTag = "Food";
     public float eatDistance = 2;
 
@@ -25,6 +26,13 @@ public class PreyAI : MonoBehaviour
     {
         if (health <= 0)
         {
+            gameObject.GetComponent<Rigidbody>().freezeRotation = false;
+            gameObject.GetComponent<Boid>().enabled = false;
+            decayTime -= Time.deltaTime;
+        }
+
+        if (decayTime <= 0)
+        {
             Destroy(gameObject);
         }
 
@@ -37,12 +45,11 @@ public class PreyAI : MonoBehaviour
         {
             myChase.target = myTarget;
             myArrive.target = myTarget; //Set the targets.
-        }
-
-        if (Vector3.Distance(myTarget.transform.position, gameObject.transform.position) <= eatDistance)
-        {
-            health++;
-            Destroy(myTarget);
+            if (Vector3.Distance(myTarget.transform.position, gameObject.transform.position) <= eatDistance)
+            {
+                health++;
+                Destroy(myTarget);
+            }
         }
     }
 
