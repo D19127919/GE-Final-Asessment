@@ -4,6 +4,8 @@ My first step in designing this project was to get the behaviors working. My goa
 
 After ensuring that the behaviors worked I adjusted the pursuit behavior to have a toggle for whether or not the boid should predict the target's movement (the "Is Smart" bool). The idea was to have some boids pursue the target's intended position and others only be able to pursue the target's current position. Then I implemented the state machine for the predators.
 
+After crafting most of the base behaviours and scenarios I began to wonder what I could do to make this unique. I added a hunger system that made the Prey boids prioritize seeking out food more. I also added in a day-night cycle and behaviour for sleeping creatures.
+
 The system was designed in 2.5D to simulate ground-based creatures and the limitations they face during a hunt. This is further reflected in the Line Of Sight (LOS) requirements for finding Prey. The idea was to make a more realistic simulation where predators could potentially not find any prey.
 
 Once all the fundamental behaviours were implemented I took some time to think about what could be added to make the simulation unique. I settled on adding certain items that the Prey boids would seek out while not being chased and implemented a system that spawned them randomly over time. I also added proper death behaviour for both boid types.
