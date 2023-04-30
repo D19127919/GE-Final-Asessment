@@ -91,6 +91,11 @@ public class PredatorAI : MonoBehaviour
             }
         }
 
+        if (potentialPrey.Count == 0)
+        {
+            return null;
+        }
+
 
         int closest = 0;
         for (int i = 1; i < potentialPrey.Count; i++)

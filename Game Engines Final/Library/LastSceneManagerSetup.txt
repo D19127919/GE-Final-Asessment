@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Threatless.unity
+- path: Assets/Scenes/OmegaScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

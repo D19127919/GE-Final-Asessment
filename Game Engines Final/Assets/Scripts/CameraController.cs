@@ -19,6 +19,8 @@ public class CameraController : MonoBehaviour
     public KeyCode freezeKey = KeyCode.LeftControl; //The button to freeze the camera look
     public KeyCode spawnKey = KeyCode.P; //The button to spawn stuff.
     public KeyCode deleteKey = KeyCode.L; //The button to delete stuff.
+    public KeyCode activeTimeKey = KeyCode.F;
+    private bool SpawnDiurnal = true;
     private int selection = 1;
 
     [Header("Spawning")] 
@@ -68,8 +70,12 @@ public class CameraController : MonoBehaviour
             switch (selection)
             {
                 case 1: Instantiate(foodObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
-                case 2: Instantiate(preyObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
-                case 3: Instantiate(predatorObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
+                case 2: GameObject spawn = Instantiate(preyObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity);
+                    spawn.GetComponent<PreyAI>().isDiurnal = SpawnDiurnal;
+                    break;
+                case 3: GameObject pSpawn = Instantiate(predatorObject, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); 
+                    pSpawn.GetComponent<PredatorAI>().isDiurnal = SpawnDiurnal;
+                    break;
                 case 4: Instantiate(tree, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
                 case 5: Instantiate(rock, new Vector3(hit.point.x, hit.point.y +1, hit.point.z), Quaternion.identity); break;
                 default: break; //Instantiate a prefab based on the selection variable.
@@ -112,5 +118,10 @@ public class CameraController : MonoBehaviour
         {
             selection = 5;
         } //All of these get input and change the selection variable based on the number pushed. Could probably have found a better way to do this, but it works this way so changing it is a low priority.
+
+        if (Input.GetKeyDown(activeTimeKey))
+        {
+            SpawnDiurnal = !SpawnDiurnal;
+        }
     }   
 }

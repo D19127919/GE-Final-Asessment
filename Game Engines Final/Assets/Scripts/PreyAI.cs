@@ -71,7 +71,11 @@ public class PreyAI : MonoBehaviour
         if (myTarget == null) //If you don't have a target...
         {
             GameObject[] potentialTargets = GameObject.FindGameObjectsWithTag(foodTag); //Find all the food in the scene.
-            myTarget = potentialTargets[Random.Range(0, potentialTargets.Length +1)]; //Get a random one.
+            if (potentialTargets.Length > 0)
+            {
+                myTarget = potentialTargets[Random.Range(0, potentialTargets.Length)]; //Get a random one.
+            }
+            
         }
 
         if (myTarget != null) //If you now have a target...
@@ -81,6 +85,7 @@ public class PreyAI : MonoBehaviour
             if (Vector3.Distance(myTarget.transform.position, gameObject.transform.position) <= eatDistance) //If you're within eating distance...
             {
                 health++; //Increase health.
+                hunger -= hungerRate * 10; //Lose 10 seconds worth of hunger.
                 Destroy(myTarget); //Destroy the food.
             }
         }
