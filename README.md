@@ -6,7 +6,7 @@ DT508
 
 This is a 2.5D nature sim focused around the hunting/scavenging behaviours of prey and predators in a small environment. This project features two kinds of Boids; Prey and Predators, as well as terrain features, passively spawning food items, and a day/night cycle.
 
-https://youtu.be/Tujlmv6r0co
+[YouTube Video](https://youtu.be/Tujlmv6r0co)
 
 ## Instructions
 Load any of the scenes and hit play. W,A,S, and D control camera movement. Spacebar to move the camera upwards, Left Shift move the camera down, move the mouse to look around, and hold Left Ctrl to freeze the camera rotation to assist clicking outside the window.
