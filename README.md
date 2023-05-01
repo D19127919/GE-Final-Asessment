@@ -55,6 +55,6 @@ The nature of the Predator boids being fast but slow to change directions made t
 * All in-game models are original assemblies of Unity prefab shapes
 * The UI sprites are original creations made in [Piskel](https://www.piskelapp.com/)
 
-All code was referenced from [this repository](https://github.com/skooter500/GE2-2023). All code was modified and extensively commented to ensure understanding.
+All code was referenced from [this repository](https://github.com/skooter500/GE2-2021-2022). All code was modified and extensively commented to ensure understanding.
 
 As for designing the project itself, I took what I call a "three-coat" approach. First I went through programming all the basic functionality and making sure everything worked, then I went back over everything and added polish and new features, such as the smart/dumb toggle for the chase behaviour. Finally, I went back over everything a third time to ensure it was all as polished as possible and seeing if there was anything quick I could add in the remaining time - usually prettier models. This was also the phase in which I began to craft the default scenarios for the project.
