@@ -237,6 +237,10 @@ MonoBehaviour:
   decayTime: 10
   foodTag: Food
   eatDistance: 2
+  hunger: 0.5
+  hungerRate: 0.01
+  isDiurnal: 1
+  nocturnalColor: {r: 0.1766966, g: 0.16620682, b: 0.4245283, a: 1}
 --- !u!114 &936109543053008698
 MonoBehaviour:
   m_ObjectHideFlags: 0

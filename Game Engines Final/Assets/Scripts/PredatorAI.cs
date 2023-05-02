@@ -8,19 +8,26 @@ public class PredatorAI : MonoBehaviour
     public string preyTag; //The tag that prey boids have.
     public float sightDistance = 30; //How far away you can see prey.
     public bool isDiurnal = true; //Whether the creature is active during the day;
+    public Color nocturnalColor = Color.black;
     
 
     private Boid myBoid;
     private Arrive myArrive;
     private Chase myChase;
     private GameObject myTarget;
-    private DayNightCycle cycle;
+    [SerializeField] private DayNightCycle cycle;
     private float starterMaxVelocity;
-    
+
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        if (!isDiurnal)
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = nocturnalColor;
+        }
+        
+        
         cycle = GameObject.FindGameObjectWithTag("Sun").GetComponent<DayNightCycle>();
         myBoid = gameObject.GetComponent<Boid>();
         myChase = gameObject.GetComponent<Chase>();

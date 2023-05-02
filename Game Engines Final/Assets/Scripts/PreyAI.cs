@@ -13,6 +13,7 @@ public class PreyAI : MonoBehaviour
     [Range(0, 2)] public float hunger = 0.5f;
     public float hungerRate = 0.01f;
     public bool isDiurnal = true; //Whether the creature is active during the day;
+    public Color nocturnalColor = Color.black;
 
     private float startingSeekWeight;
 
@@ -24,8 +25,14 @@ public class PreyAI : MonoBehaviour
     private float starterMaxVelocity;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        if (!isDiurnal)
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = nocturnalColor;
+        }
+        
+        
         myBoid = gameObject.GetComponent<Boid>();
         myChase = gameObject.GetComponent<Chase>();
         myArrive = gameObject.GetComponent<Arrive>(); //Set components for easier access.

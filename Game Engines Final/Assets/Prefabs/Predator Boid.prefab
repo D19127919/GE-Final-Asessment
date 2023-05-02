@@ -237,6 +237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preyTag: Prey
   sightDistance: 30
+  isDiurnal: 1
+  nocturnalColor: {r: 0.4811321, g: 0.17928979, b: 0.17928979, a: 1}
 --- !u!135 &6127930758143796581
 SphereCollider:
   m_ObjectHideFlags: 0
